@@ -7,3 +7,7 @@ build/
 .env.test.local
 .env.production.local
 .vscode/
+.cache/
+.vscode/
+.DS_Store
+Thumbs.db
