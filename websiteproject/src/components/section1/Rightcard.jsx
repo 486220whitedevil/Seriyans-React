@@ -1,14 +1,8 @@
 import React from 'react'
-
+import { ArrowRight } from 'lucide-react'
 const Rightcard = ({ bname, image }) => {
   return (
-    <div className='
-      relative 
-      h-9/10 
-      w-1/3 
-      shrink-0 
-      bg-white 
-      my-8 
+    <div className='relative h-9/10 w-1/3 shrink-0 bg-white my-8 
       rounded-4xl 
       overflow-hidden
     '>
@@ -29,7 +23,7 @@ const Rightcard = ({ bname, image }) => {
         via-black/40 
         to-transparent
         z-10
-      ' />
+      ' /> <ArrowRight />
 
       {/* Content (TOP LAYER) */}
       <div className='
@@ -41,7 +35,7 @@ const Rightcard = ({ bname, image }) => {
         px-5
       '>
         <h1 className='text-white mb-4'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quasi aliquid accusamus quidem accusantium tenetur suscipit laborum non aliquam laboriosam, nemo error enim
         </h1>
 
         <button className='
