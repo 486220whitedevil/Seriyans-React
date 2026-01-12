@@ -23,7 +23,9 @@ const Rightcontent = () => {
   ]
 
   return (
-    <div className=' text-white h-9/10 w-2/3 px-6 rounded-2xl flex flex-row gap-4 overflow-x-auto no-scroll'>
+    <div 
+    id='Right'
+    className=' text-white h-9/10 w-2/3 px-6 rounded-2xl flex flex-row gap-4 overflow-x-auto no-scroll'>
       {obj.map((elem , index) => {
         console.log(elem)
         return <Rightcard  key={index} id={index} bname={elem.bname} image={elem.image}/>
