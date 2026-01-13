@@ -22,6 +22,12 @@ const Input = () => {
 
     }
 
+    const handleDelete = (e) => {
+        const index = Number(e.currentTarget.dataset.index);
+        setTask(prev => prev.filter((_, i) => i !== index));
+    };
+
+
 
     return (
 
@@ -54,14 +60,24 @@ const Input = () => {
             <div className='w-1/2 min-h-screen bg-black p-10 '>
                 <h1 className='text-white text-2xl font-bold mb-6'>Recent Notes</h1>
                 <div className='flex flex-wrap gap-5'>
-                    {task.map((elem, idx) => {
-                    return (
-                        <div key={idx} className='h-50 w-50 bg-[url(https://images.template.net/122999/note-taking-paper-template-jq5yy.jpg)] bg-cover bg-center rounded-lg text-black p-5'>
+                    {task.map((elem, idx) => (
+                        <div
+                            key={idx}
+                            className='relative h-50 w-50 bg-[url(https://images.template.net/122999/note-taking-paper-template-jq5yy.jpg)] bg-cover bg-center rounded-lg text-black p-5'
+                        >
+                            <button
+                                data-index={idx}
+                                onClick={handleDelete}
+                                className="px-4 absolute top-0 right-0 bg-red-700 text-white rounded-lg m-1 cursor-pointer"
+                            >
+                                X
+                            </button>
+
                             <h1 className="text-2xl font-bold">{elem.title}</h1>
                             <h3 className="text-gray-800">{elem.details}</h3>
                         </div>
-                    )
-                })}
+                    ))}
+
                 </div>
 
             </div>
