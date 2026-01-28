@@ -16,7 +16,7 @@ const App = () => {
     getData()
   },[index])
 
-  let printUserData = <h3 className='text-xl text-gray-400'>No data awailable</h3>
+  let printUserData = <h3 className='text-xl text-gray-400 absolute top-1/2 left-1/2'>loading...</h3>
 
   if(userData.length>0){
     printUserData = userData.map((elem , idx) => {
@@ -43,15 +43,19 @@ const App = () => {
 
      
 
-      <div className='flex justify-between items-center  gap-10 w-1/2 mx-auto'>
+      <div className='flex justify-between items-center  gap-10 w-1/2 mx-auto fixed bottom-10 left-100 '>
         <button 
         onClick={() => {
-          if(index>1) setIndex(index-1)
+          if(index>1) {
+            setIndex(index-1)
+            setUserData([])
+          }
         }}
         className='bg-gray-800 text-white font-sm px-5 py-3 mt-10 cursor-pointer rounded-lg active:scale-95'>Prev</button>
-        <h1 className='text-4xl '>{index}</h1>
+        <h1 className='text-3xl '>Page - {index}</h1>
         <button
         onClick={() => {
+          setUserData([])
           setIndex(index+1)
         }} 
         className='bg-gray-800 text-white font-sm px-5 py-3 mt-10 cursor-pointer rounded-lg active:scale-95'>Next</button>
